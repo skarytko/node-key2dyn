@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<script xmlns="http://www.keynote.com/namespaces/txnp/script" type="TransactionPerspective" version="11.2.189.269" guid="A3BDCBF5-9208-4031-B2E1-679B0CB0AB6B" recorder="11.2.155.422" sav="131">
+	<name><![CDATA[KBB.com - UC YMMT valuation]]></name>
+	<description><![CDATA[Used car pricing -VP]]></description>
+	<settings>
+		<timeout>60</timeout>
+		<ignore_frame_errors>1</ignore_frame_errors>
+		<http_decoding_option>0</http_decoding_option>
+		<err_if_no_nw_activity>0</err_if_no_nw_activity>
+		<non_dom>0</non_dom>
+		<dialog auto-close="0"/>
+	</settings>
+	<actions>
+		<action type="Browser">
+			<name><![CDATA[Used KBB value - BMW 5 Series]]></name>
+			<description><![CDATA[valuation -YMMT]]></description>
+			<step type="Navigate">
+				<context window="0" frame="0"/>
+				<parameter name="URL">
+					<variable type="Static"><![CDATA[http://www.kbb.com/bmw/5-series/2012-bmw-5-series/535i-sedan-4d/?vehicleid=371082&intent=buy-used]]></variable>
+				</parameter>
+			</step>
+			<completion>
+				<window index="0" type="Network">
+					<event type="Inactivity" duration="2000"/>
+				</window>
+			</completion>
+			<timeout>90</timeout>
+			<validation>
+				<validate type="RequiredText" RegEx="0">
+					<parameter name="Text">
+						<variable type="Static"><![CDATA[this car]]></variable>
+					</parameter>
+				</validate>
+			</validation>
+		</action>
+	</actions>
+	<report><![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Script View</title><link rel="stylesheet" type="text/css" title="" href="../kite/Report.css"/></head><body><ul class="scriptviewer"><ul><li class='script_i2'><span class='script_i2_s'>KBB.com - UC YMMT valuation</span></li><ul><li class='cookies_i24'><span class='cookies_i24_s'>HTTP Cookies</span></li><ul><li class='cookie'><span class='cookie_s'>Name:PersistentZipCode;  Value:92618;  Domain:.kbb.com;  Path:/</span></li><li class='cookie'><span class='cookie_s'>Name:group;  Value:keynote;  Domain:kbb.com;  Path:/</span></li></ul><li class='description'><span class='description_s'>Used car pricing -VP </span></li><li class='settings_i22'><span class='settings_i22_s'>Settings</span></li><ul><li class=''><span class='_s'>Timeout: 60 sec</span></li></ul></ul><li class='empty-line'><div></div></li><ul class="actionblock"><li class='action_i6'><span class='action_i6_s'>1.Used KBB value - BMW 5 Series</span></li><ul><li class='description'><span class='description_s'>valuation -YMMT </span></li><li class='step_i11'><span class='step_i11_s'>Navigate to</span></li><ul><li class='parameter'><span class='parameter_s'>URL: http://www.kbb.com/bmw/5-series/2012-bmw-5-series/535i-sedan-4d/?vehicleid=371082&amp;intent=buy-used</span></li></ul><li class='validation_i9'><span class='validation_i9_s'>Validation</span></li><ul><li class='validate_i30'><span class='validate_i30_s'>Type:RequiredText;  Text:this car</span></li></ul><li class='completion_i8'><span class='completion_i8_s'>Completion</span></li><ul><li class='window'><span class='window_s'>HTTP Messages</span></li><ul><li class='event'><span class='event_s'>Event: Inactivity - 2000 msec</span></li></ul></ul></ul></ul></ul></ul></body></html>]]></report>
+	<info OS="6.1.7601 Service Pack 1" IE="10.0.9200.16798" MSHTML="10.0.9200.16798" WinInet="10.0.9200.16798" WinHttp="6.1.7601.17514" MSXML6="6.30.7601.17988">
+		<ps e="0" d="0" s="0" el="0"/>
+	</info>
+	<cookies>
+		<cookie secure="0">
+			<parameter name="Name">
+				<variable type="Static"><![CDATA[PersistentZipCode]]></variable>
+			</parameter>
+			<parameter name="Value">
+				<variable type="Static"><![CDATA[92618]]></variable>
+			</parameter>
+			<parameter name="Domain">
+				<variable type="Static"><![CDATA[.kbb.com]]></variable>
+			</parameter>
+			<parameter name="Path">
+				<variable type="Static"><![CDATA[/]]></variable>
+			</parameter>
+		</cookie>
+		<cookie secure="0">
+			<parameter name="Name">
+				<variable type="Static"><![CDATA[group]]></variable>
+			</parameter>
+			<parameter name="Value">
+				<variable type="Static"><![CDATA[keynote]]></variable>
+			</parameter>
+			<parameter name="Domain">
+				<variable type="Static"><![CDATA[kbb.com]]></variable>
+			</parameter>
+			<parameter name="Path">
+				<variable type="Static"><![CDATA[/]]></variable>
+			</parameter>
+		</cookie>
+	</cookies>
+</script>

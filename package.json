@@ -1,6 +1,6 @@
 {
   "name": "key2dyn",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "dependencies": {
     "underscore": "^1.7.0",
     "xml2js": "^0.4.4"

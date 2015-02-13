@@ -4,6 +4,7 @@ var key2dyn = require('../lib/key2dyn');
 
 var filename = './test/scripts/script.krs';
 var filename2 = './test/scripts/cookies_script.krs';
+var filename3 = './test/scripts/script.kht';
 
 describe('key2dyn', function() {
 
@@ -32,7 +33,7 @@ describe('key2dyn', function() {
 		
 		it('should return a converted script with cookies', function(done) {
 			// open file
-			fs.readFile(filename, { encoding: 'utf8' }, function(err, data) {
+			fs.readFile(filename3, { encoding: 'utf8' }, function(err, data) {
 				if (err) throw err;
 
 				// parse xml script

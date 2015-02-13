@@ -53,5 +53,29 @@ describe('key2dyn', function() {
 		});
 		
 	});
+	
+	describe('gslify', function() {
+		
+		it('should return valid string', function(done) {
+			
+			// open file
+			fs.readFile(filename, { encoding: 'utf8' }, function(err, data) {
+				if (err) throw err;
+
+				// parse xml script
+				key2dyn.parseXMLScript(data, function(err, result) {
+					if (err) throw err;
+					
+					var script = key2dyn.convertScript(result);
+					var contents = key2dyn.gslify(script);
+					console.log(contents);
+					assert.equal(typeof contents, 'string');
+					done();
+				});
+			});
+			
+		});
+		
+	});
 
 });

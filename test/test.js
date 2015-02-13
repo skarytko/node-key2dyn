@@ -1,14 +1,12 @@
 var fs = require('fs');
 var assert = require('assert');
-var Key2dyn = require('../lib/key2dyn');
+var key2dyn = require('../lib/key2dyn');
 
 var filename = './test/scripts/script.krs';
 var filename2 = './test/scripts/cookies_script.krs';
 
 describe('key2dyn', function() {
-	
-	var converter = new Key2dyn();
-	
+
 	describe('parse', function() {
 		
 		it('should return an parsed object from xml', function(done) {
@@ -18,7 +16,7 @@ describe('key2dyn', function() {
 				if (err) throw err;
 
 				// parse xml script
-				converter.parseScript(data, function(err, result) {
+				key2dyn.parseXMLScript(data, function(err, result) {
 					if (err) throw err;
 
 					assert.equal(typeof result, 'object');
@@ -38,12 +36,12 @@ describe('key2dyn', function() {
 				if (err) throw err;
 
 				// parse xml script
-				converter.parseScript(data, function(err, result) {
+				key2dyn.parseXMLScript(data, function(err, result) {
 					if (err) throw err;
 					
-					var script = converter.convertScript(result);
+					var script = key2dyn.convertScript(result);
 					
-					fs.writeFile('./script.json', JSON.stringify(script), function (err, written, string) {
+					fs.writeFile('./tmp/script.json', JSON.stringify(script), function (err, written, string) {
 					  if (err) throw err;
 						
 						assert.equal(typeof script, 'object');

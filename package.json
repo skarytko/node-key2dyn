@@ -10,5 +10,29 @@
     "grunt-contrib-jshint": "^0.11.0",
     "grunt-mocha-test": "^0.12.7",
     "mocha": "^2.1.0"
-  }
+  },
+  "description": "Keynote to Dynatrace Synthetic script converter for Node.js.",
+  "main": "./lib/key2dyn",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skarytko/node-key2dyn.git"
+  },
+  "keywords": [
+    "keynote",
+    "dynatrace",
+    "synthetic",
+    "script"
+  ],
+  "author": "Stefan Karytko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skarytko/node-key2dyn/issues"
+  },
+  "homepage": "https://github.com/skarytko/node-key2dyn"
 }

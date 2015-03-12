@@ -33,7 +33,7 @@ describe('key2dyn', function() {
 		
 		it('should return a converted script with cookies', function(done) {
 			// open file
-			fs.readFile(filename3, { encoding: 'utf8' }, function(err, data) {
+			fs.readFile(filename2, { encoding: 'utf8' }, function(err, data) {
 				if (err) throw err;
 
 				// parse xml script
@@ -69,7 +69,7 @@ describe('key2dyn', function() {
 					
 					var script = key2dyn.convertScript(result);
 					var contents = key2dyn.gslify(script);
-					console.log(contents);
+					//console.log(contents);
 					assert.equal(typeof contents, 'string');
 					done();
 				});
